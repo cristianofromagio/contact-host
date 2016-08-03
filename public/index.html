@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html lang="">
 <meta charset="UTF-8">
-<title>UFS - Combate Sertanejo</title>
+<title>Contato</title>
 <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-<link rel="icon" type="image/png" href="dist/img/launcher-icon-2x.png" />
-<meta name="mobile-web-app-capable" content="yes">
-<script>
-	(function(d) {
-		var config = {
-					kitId: 'wbk2jny',
-					scriptTimeout: 3000,
-					async: true
-				},
-				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-	})(document);
-</script>
-<link rel="manifest" href="/public/manifest.json">
 <script src="dist/js/villa.min.js"></script>
 <link rel="stylesheet" href="dist/css/villa.min.css"/>
-<link rel="stylesheet" href="dist/css/ufs-app.css"/>
+<link rel="stylesheet" href="dist/css/citodon.css"/>
 <!--[if lt IE 9]>
 <link rel="stylesheet" type="text/css" href="dist/css/material-colors.css"/>
 <link rel="stylesheet" type="text/css" href="dist/css/villa-cross.min.css"/>
@@ -28,151 +15,291 @@
 <script src="dist/js/classList.min.js"></script>
 <![endif]-->
 
+<style>
+
+
+
+</style>
+
 <body>
 
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!--
+section#contato.Contact
+	.Contact-background
+	.Contact-inner
+		.Contact-header
+			h2.Contact-title
+			p
+		form.ContactForm
+			input.ContactForm-name
+			input.ContactForm-email
+			input.ContactForm-subject
+			textarea.ContactForm-message
+-->
 
-	ga('create', 'UA-80491344-1', 'auto');
-	ga('send', 'pageview');
+<section id="contato" class="Contact">
 
-</script>
+	<div class="Contact-background"></div>
 
-<div id="modal" class="Modal">
+	<div class="Contact-inner container">
 
-	<div class="Modal-backdrop"></div>
+		<div class="Contact-header">
 
-	<div class="Modal-body">
+			<h2 class="font-blue">Contato</h2>
 
-		<div class="Modal-inner">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio obcaecati quaerat rem voluptate.</p>
 
-			<h1>Obrigado!</h1>
+		</div>
 
-			<p>Acompanhe o resultado na nossa página no Facebook</p>
+		<div id="contact-form" class="ContactForm">
 
-			<img src="dist/img/JesseJamesLogo--preto.png" alt="" style="margin-top: 3em"/>
+			<div class="ContactFormField">
+
+				<label for="name">NOME</label>
+				<input id="name" type="text" autocomplete="off" class="ContactFormField-input" placeholder="NOME"/>
+
+			</div>
+
+			<div class="ContactFormField">
+
+				<label for="email">EMAIL</label>
+				<input id="email" type="email" autocomplete="off" class="ContactFormField-input" placeholder="EMAIL"/>
+
+			</div>
+
+			<div class="ContactFormField">
+
+				<label for="subject">ASSUNTO</label>
+				<input id="subject" type="text" autocomplete="off" class="ContactFormField-input" placeholder="ASSUNTO"/>
+
+			</div>
+
+			<div class="ContactFormField">
+
+				<label for="message">MENSAGEM</label>
+				<textarea id="message" class="ContactFormField-input ContactFormField--message" placeholder="MENSAGEM"></textarea>
+
+			</div>
+
+			<div class="ContactFormButton">
+				<button id="send" class="ContactFormField-button ContactFormField--send">Enviar</button>
+			</div>
 
 		</div>
 
 	</div>
 
-</div>
+</section>
 
-<main id="ufs-app" class="App">
-
-	<div class="App-background">
-
-		<div class="App-overlay"></div>
-
-	</div>
-
-	<div class="App-inner">
-
-		<header id="ufs-app-header" class="Header App-header">
-
-			<div class="Logo">
-
-				<div class="Logo-inner">
-
-					<img src="dist/img/UFSLogo.png" alt=""/>
-
-				</div>
-
-			</div>
-
-		</header>
-
-		<div class="Stage App-stage">
-
-			<div class="AppScreen is-active">
-
-				<div class="AppScreen-background"></div>
-
-				<div class="AppScreen-inner">
-
-					<div id="voting-box" class="VotingBox">
-
-						<div id="match" class="Match">
-
-							<div class="Candidate"></div>
-							<div class="Candidate"></div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="AppScreen">
-
-				<div class="AppScreen-background red"></div>
-
-				<div class="AppScreen-inner font-white flex justify-center align-center">
-
-					<h1>Obrigado!</h1>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<footer class="Footer App-footer green"></footer>
-
-	</div>
-
-</main>
-
-<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
 
 <script>
 
-	// Initialize Firebase
-	var config = {
-		apiKey: "AIzaSyAPBMowmgiW0V1H3FDlJ6GBLQHDq7RX3kg",
-		authDomain: "ufs-app.firebaseapp.com",
-		databaseURL: "https://ufs-app.firebaseio.com",
-		storageBucket: "ufs-app.appspot.com"
-	};
+	/* Required fields */
 
-	firebase.initializeApp(config);
+	var RequiredField = (function () {
 
+		/**
+		 * Required Field constructor
+		 * @constructor
+		 */
+		function RequiredField(viewport, fieldClass) {
+
+			var self = this;
+
+			this.viewport = viewport;
+
+			this.input = {};
+			this.fieldClass = fieldClass;
+
+			this.onClick = function () {
+
+				try {
+
+					self.input.viewport.focus();
+
+				} catch ( e ) { }
+
+			};
+
+			this.onFocus = function () {
+
+				self.viewport.classList.add('has-focus');
+
+				if (self.input.viewport.value)
+					self.viewport.classList.remove('is-empty');
+
+			};
+
+			this.onBlur = function () {
+
+				self.viewport.classList.remove('has-focus');
+
+				if (!self.input.viewport.value)
+					self.viewport.classList.add('is-empty');
+				else
+					self.viewport.classList.remove('is-empty');
+
+			};
+
+			this.onInput = function () {
+
+				if (self.input.viewport.value) {
+					self.viewport.classList.remove('is-empty');
+					self.viewport.classList.add('has-label');
+					self.viewport.classList.add('is-valid');
+				} else {
+					self.viewport.classList.remove('has-label');
+					self.viewport.classList.remove('is-valid');
+				}
+
+			};
+
+			if (this.viewport)
+				this.init();
+
+		}
+
+		/**
+		 * Normalize
+		 */
+		RequiredField.prototype.normalize = function () {
+
+			if (this.input.viewport.value)
+				this.viewport.classList.add('has-label');
+
+		};
+
+		/**
+		 * Add the listeners
+		 * It support IE8
+		 */
+		RequiredField.prototype.addListeners = function () {
+
+			try {
+
+				this.viewport.addEventListener('click', this.onClick, false);
+
+				this.input.viewport.addEventListener('focus', this.onFocus, false);
+				this.input.viewport.addEventListener('blur', this.onBlur, false);
+				this.input.viewport.addEventListener('input', this.onInput, false);
+
+			} catch ( e ) {	}
+
+		};
+
+		/**
+		 * Get the input element
+		 * @return {boolean}
+		 */
+		RequiredField.prototype.getInputElement = function () {
+
+			this.input.viewport = this.viewport.querySelector(this.fieldClass);
+
+			return !!this.input.viewport;
+
+		};
+
+		/**
+		 * Init the instance
+		 */
+		RequiredField.prototype.init = function () {
+
+			if (this.getInputElement())
+				this.addListeners();
+
+			this.normalize();
+
+		};
+
+		return RequiredField;
+
+	})();
 </script>
 
 <script>
 
-	var databaseRef = firebase.database().ref();
-	var votesRef = databaseRef.child('votes/');
+	/* Email deliver */
 
-	try {
+	var EmailDeliver = (function () {
 
-		databaseRef.child('page_views').push({userAgent: window.navigator.userAgent, timestamp: Date.now()});
+		/**
+		 * Email deliver constructor
+		 * @constructor
+		 */
+		function EmailDeliver(formID) {
 
-	} catch (e) {}
+			this.formID = formID;
+			this.destination = "fromagio_cristiano@live.com"; // CONFIGURATION REQUIRED
 
-	var modal = false;
-	var ufs = false;
+			if (this.formID)
+				this.init();
 
+		}
+
+		EmailDeliver.prototype.formatMessage = function () {
+
+			var element = document.getElementById(this.formID);
+			var name = element.querySelector("input#name").value;
+			var email = element.querySelector("input#email").value;
+			var subject = element.querySelector("input#subject").value;
+			var message = element.querySelector("textarea#message").value;
+			var textBody = "Nome: " + name + "\n\n" + message;
+
+			var body = {
+				"From": "mailman@elbit.com.br",
+				"To": this.destination,
+				"Subject": subject,
+				"TextBody": textBody,
+				"HTMLBody": textBody,
+				"ReplyTo": email
+			};
+
+			console.log(JSON.stringify(body));
+
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', 'https://api.postmarkapp.com/email', true);
+			xhr.setRequestHeader("Accept", "application/json");
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.setRequestHeader("X-Postmark-Server-Token", "POSTMARK_API_TEST");
+			xhr.send(JSON.stringify(body));
+			xhr.onload = function () {
+
+				if (xhr.status >= 200 && xhr.status < 400) {
+
+					try {
+						console.log(xhr.responseText);
+					} catch (ex) {
+						console.log("Error parse: " + ex);
+					}
+
+				} else {
+					console.log("Erro");
+				}
+
+			};
+
+		};
+
+		EmailDeliver.prototype.init = function () {
+
+			this.destination ? this.formatMessage() : console.log('Destination missing');
+
+		};
+
+		return EmailDeliver;
+
+	})();
 </script>
-
-<script src="dist/js/ufs-app.js"></script>
 
 <script>
 
-	function start() {
+	var requiredFields = document.querySelectorAll('.ContactFormField');
+	for (var i = requiredFields.length; i--; )
+		requiredFields[i].requiredField = new RequiredField(requiredFields[i], '.ContactFormField-input');
 
-		modal = new Modal(document.getElementById('modal'));
-
-		ufs = new App(document.getElementById('ufs-app'), firebase);
-
-	}
-
-	window.onload = start;
+	document.getElementById('send').addEventListener('click', function (ev) {
+		var newMail = new EmailDeliver('contact-form');
+	});
 
 </script>
 
